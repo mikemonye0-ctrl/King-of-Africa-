@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jared E-Commerce Mentorship Program</title>
+  <style>
+    /* ===== Global Styles ===== */
+    :root {
+      --bg-1: #1a1a2e;
+      --bg-2: #16213e;
+      --bg-3: #0f3460;
+      --accent-1: #ff6a00;
+      --accent-2: #ee0979;
+      --muted: #9ca3af;
+      --card-bg: rgba(255, 255, 255, 0.05);
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+      color: #f1f1f1;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    header p {
+      font-size: 1.05rem;
+      color: #d1d5db;
+      margin: 0;
+    }
+
+    /* ===== Form Card ===== */
+    main {
+      display: block;
+    }
+    form {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--accent-1);
+      border-left: 4px solid var(--accent-2);
+      padding-left: 8px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.65);
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 0 10px var(--accent-1);
+    }
+    textarea { min-height: 120px; resize: vertical; }
+
+    /* ===== Buttons ===== */
+    .submit {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,106,0,0.45); }
+    .submit:active { transform: translateY(1px); }
+
+    /* ===== Success Message ===== */
+    .success {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(34,197,94,0.12);
+      border: 1px solid #22c55e;
+      color: #bbf7d0;
+      font-weight: 600;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 520px) {
+      header h1 { font-size: 1.6rem; }
+      .container { padding: 12px; margin: 20px auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Jared E-Commerce Mentorship Program</h1>
+      <p>Apply now to accelerate your online business growth 🚀</p>
+    </header>
+
+    <main>
+      <!-- If you have a server endpoint, set form action and method accordingly.
+           This example uses progressive enhancement (JS handles submission in-page). -->
+      <form id="mentorshipForm" novalidate>
+        <h2>Contact Information</h2>
+
+        <label for="fullName">Full Name</label>
+        <input id="fullName" name="fullName" type="text" placeholder="Ada Lovelace" required autocomplete="name" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+234 800 000 0000" autocomplete="tel" />
+
+        <h2>Business Snapshot</h2>
+
+        <label for="brandName">Brand Name</label>
+        <input id="brandName" name="brandName" type="text" placeholder="Your Brand Ltd." autocomplete="organization" />
+
+        <label for="website">Website</label>
+        <input id="website" name="website" type="url" placeholder="https://yourstore.com" autocomplete="url" />
+
+        <label for="niche">Niche</label>
+        <input id="niche" name="niche" type="text" placeholder="Fashion, Electronics, Beauty..." />
+
+        <h2>Goals &amp; Challenges</h2>
+
+        <label for="goals">Top Goals</label>
+        <textarea id="goals" name="goals" placeholder="E.g., Scale ads profitably, improve retention..." required></textarea>
+
+        <label for="challenges">Biggest Challenges</label>
+        <textarea id="challenges" name="challenges" placeholder="E.g., CAC too high, supply chain issues..." required></textarea>
+
+        <button type="submit" class="submit">Apply Now</button>
+
+        <div id="success" class="success" role="status" aria-live="polite" tabindex="-1" hidden>
+          ✓ Application received! We'll contact you soon.
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      &copy; Jared Mentorship Program • All rights reserved
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('mentorshipForm');
+      const success = document.getElementById('success');
+
+      function showSuccess() {
+        success.hidden = false;
+        // Move focus to the success message so screen readers announce it
+        success.focus();
+        // hide the message after a few seconds (optional)
+        window.setTimeout(() => {
+          success.hidden = true;
+        }, 6000);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Basic built-in validation reporting (keeps UX accessible)
+        if (!form.checkValidity()) {
+          // Let the browser show validation messages
+          form.reportValidity();
+          return;
+        }
+
+        // Here you would send the form data to your backend.
+        // Example (uncomment and replace /submit-endpoint):
+        /*
+        const data = new FormData(form);
+        fetch('/submit-endpoint', { method: 'POST', body: data })
+          .then(resp => {
+            if (resp.ok) {
+              showSuccess();
+              form.reset();
+            } else {
+              // handle error
+            }
+          })
+          .catch(err => {
+            console.error(err);
+          });
+        */
+
+        // For this static example we simply show the success message:
+        showSuccess();
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+  </html>
